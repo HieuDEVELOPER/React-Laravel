@@ -73,15 +73,6 @@ const AddCar = ({ getCars }) => {
     formData.append("model", car.model);
     formData.append("produced_on", car.produced_on);
 
-    // fetch("http://localhost:8000/api/cars", { method: "post", body: formData })
-    //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     toggle(); //đóng form modal
-    //     onRedirect();
-    //   });
     axios
       .post("http://localhost:8000/api/cars", formData)
       .then((res) => console.log(res))
@@ -111,11 +102,7 @@ const AddCar = ({ getCars }) => {
             </FormGroup>
             <FormGroup>
               <Label for="description">Description</Label>
-              <Input
-                id="description"
-                name="make"
-                onChange={onChangeDesc}
-              />
+              <Input id="description" name="make" onChange={onChangeDesc} />
             </FormGroup>
             <FormGroup>
               <Label for="produced_on">Produced_on</Label>
